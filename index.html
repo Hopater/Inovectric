@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovectric - Innovating IT, Powering Connectivity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/rss-parser@3.12.0/dist/rss-parser.min.js"></script>
+    <style>
+        /* Custom CSS for elements that need more specific styling */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(41, 98, 255, 0.9) 0%, rgba(106, 27, 154, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+        }
+        
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+        
+        /* Animation for consultation section */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-blue-600">Inovectric</span>
+                </a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-blue-600 font-medium hover:text-blue-800 transition">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
+                <a href="#blog" class="text-gray-600 hover:text-blue-600 transition">Blog</a>
+                <a href="#consultation" class="text-gray-600 hover:text-blue-600 transition">Consultation</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="language-selector">
+                    <button class="flex items-center text-gray-600 hover:text-blue-600">
+                        <i class="fas fa-globe mr-1"></i>
+                        <span>EN</span>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Français</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">العربية</a>
+                    </div>
+                </div>
+                <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
+            <a href="#home" class="block py-2 text-blue-600 font-medium">Home</a>
+            <a href="#services" class="block py-2 text-gray-600">Services</a>
+            <a href="#blog" class="block py-2 text-gray-600">Blog</a>
+            <a href="#consultation" class="block py-2 text-gray-600">Consultation</a>
+            <a href="#contact" class="block py-2 text-gray-600">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Innovating IT, Powering Connectivity, Building the Future</h1>
+                <p class="text-xl mb-8">Comprehensive technology solutions for businesses and homes. From IT infrastructure to electrical systems and fiber optic networks.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#consultation" class="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                        Get a Free Consultation
+                    </a>
+                    <a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-600 font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Comprehensive Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We provide end-to-end solutions across multiple technology domains to meet all your infrastructure needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- IT Services Card -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                        <i class="fas fa-server text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">IT Services</h3>
+                        <p class="opacity-90">Cutting-edge hardware and software solutions for modern businesses.</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Cybersecurity Solutions
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Network Infrastructure
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Cloud Services
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Hardware Support
+                            </li>
+                        </ul>
+                        <a href="#it-services" class="mt-6 inline-block text-blue-600 hover:text-blue-800 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Electrical Maintenance Card -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-gradient-to-r from-yellow-500 to-orange-500 p-6 text-white">
+                        <i class="fas fa-bolt text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Electrical Maintenance</h3>
+                        <p class="opacity-90">Safe and reliable electrical solutions for residential and commercial properties.</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Wiring & Installations
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Power Systems
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Emergency Repairs
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Energy Efficiency
+                            </li>
+                        </ul>
+                        <a href="#electrical" class="mt-6 inline-block text-blue-600 hover:text-blue-800 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- FTTH Telecom Card -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-gradient-to-r from-gray-100 to-blue-300 p-6 text-gray-800">
+                        <i class="fas fa-network-wired text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">FTTH Telecom Projects</h3>
+                        <p class="opacity-90">Future-proof fiber optic solutions for high-speed connectivity.</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Fiber Optic Installations
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Network Planning
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Government Projects
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Private Sector Solutions
+                            </li>
+                        </ul>
+                        <a href="#ftth" class="mt-6 inline-block text-blue-600 hover:text-blue-800 font-medium">
+                            Learn More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Why Choose Inovectric?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We combine technical expertise with customer-focused service to deliver exceptional results.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Certified Professionals</h3>
+                    <p class="text-gray-600">Our team holds industry-leading certifications in IT, electrical, and telecom fields.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-history text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">15+ Years Experience</h3>
+                    <p class="text-gray-600">We've been delivering technology solutions since 2008 with a proven track record.</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Round-the-clock assistance for emergencies and critical system issues.</p>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8">What Our Clients Say</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold mr-4">JD</div>
+                            <div>
+                                <h4 class="font-bold">John D.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Inovectric completely transformed our office network infrastructure. Their team was professional, knowledgeable, and delivered ahead of schedule. Our connectivity issues are now a thing of the past."</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold mr-4">SM</div>
+                            <div>
+                                <h4 class="font-bold">Sarah M.</h4>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"The electrical team handled our commercial building rewiring with exceptional care. They minimized disruption to our business operations and completed the project under budget. Highly recommended!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Services Detailed Section -->
+    <section id="it-services" class="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-blue-600">IT Services & Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive technology services to keep your business secure and connected.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Cybersecurity Solutions</h3>
+                    <p class="text-gray-600 mb-4">Protect your business from evolving cyber threats with our multi-layered security approach.</p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                            Network Security Assessments
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                            Endpoint Protection
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                            Security Awareness Training
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                            24/7 Threat Monitoring
+                        </li>
+                    </ul>
+                    <a href="#consultation" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300">
+                        Secure Your Business
+                    </a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cybersecurity" class="rounded-lg w-full">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div class="bg-white p-4 rounded-lg shadow-md order-last md:order-first">
+                    <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Network Infrastructure" class="rounded-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600">Network Infrastructure</h3>
+                    <p class="text-gray-600 mb-4">Design, implementation, and maintenance of robust network architectures for optimal performance.</p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-network-wired text-purple-500 mr-2"></i>
+                            LAN/WAN Solutions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-network-wired text-purple-500 mr-2"></i>
+                            Wireless Network Design
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-network-wired text-purple-500 mr-2"></i>
+                            VoIP Implementation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-network-wired text-purple-500 mr-2"></i>
+                            Network Performance Optimization
+                        </li>
+                    </ul>
+                    <a href="#consultation" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300">
+                        Upgrade Your Network
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Request a Quote Form -->
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto mt-12">
+                <h3 class="text-2xl font-bold mb-6 text-center text-blue-600">Request a Quote</h3>
+                <form id="it-quote-form" class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="company" class="block text-gray-700 mb-2">Company</label>
+                        <input type="text" id="company" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="service" class="block text-gray-700 mb-2">Service Needed</label>
+                        <select id="service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select a service</option>
+                            <option value="cybersecurity">Cybersecurity Solutions</option>
+                            <option value="network">Network Infrastructure</option>
+                            <option value="cloud">Cloud Services</option>
+                            <option value="hardware">Hardware Support</option>
+                            <option value="other">Other IT Services</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-gray-700 mb-2">Project Details</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                            Get Your Quote
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electrical Maintenance Detailed Section -->
+    <section id="electrical" class="py-16 bg-gradient-to-b from-yellow-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-600">Electrical Maintenance Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Safe, reliable, and efficient electrical solutions for all your needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-600">Residential & Commercial Wiring</h3>
+                    <p class="text-gray-600 mb-4">Professional electrical installations and upgrades for homes and businesses.</p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-home text-yellow-500 mr-2"></i>
+                            Complete Home Wiring
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-building text-yellow-500 mr-2"></i>
+                            Commercial Electrical Systems
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                            Lighting Design & Installation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-plug text-yellow-500 mr-2"></i>
+                            Outlet & Switch Installations
+                        </li>
+                    </ul>
+                    <a href="#consultation" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300">
+                        Schedule Service
+                    </a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Electrical Wiring" class="rounded-lg w-full">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div class="bg-white p-4 rounded-lg shadow-md order-last md:order-first">
+                    <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Power Systems" class="rounded-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-orange-600">Power Systems & Emergency Repairs</h3>
+                    <p class="text-gray-600 mb-4">Reliable power solutions and 24/7 emergency response for critical electrical issues.</p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-car-battery text-orange-500 mr-2"></i>
+                            Backup Power Systems
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-bolt text-orange-500 mr-2"></i>
+                            Electrical Panel Upgrades
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-exclamation-triangle text-orange-500 mr-2"></i>
+                            Emergency Electrical Repairs
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-charging-station text-orange-500 mr-2"></i>
+                            EV Charging Stations
+                        </li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+                        <a href="#consultation" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300 text-center">
+                            Get a Quote
+                        </a>
+                        <a href="tel:+1234567890" class="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 font-bold py-2 px-6 rounded-lg inline-block transition duration-300 text-center">
+                            <i class="fas fa-phone mr-1"></i> Emergency Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FTTH Telecom Detailed Section -->
+    <section id="ftth" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-blue-400">FTTH Telecom Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Future-proof fiber optic solutions for high-speed connectivity.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Fiber Optic Design & Installation</h3>
+                    <p class="text-gray-600 mb-4">End-to-end fiber to the home (FTTH) solutions for residential and commercial properties.</p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-project-diagram text-blue-400 mr-2"></i>
+                            Network Design & Planning
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-fiberglass text-blue-400 mr-2"></i>
+                            Fiber Optic Cable Installation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-home text-blue-400 mr-2"></i>
+                            Home Fiber Termination
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-tools text-blue-400 mr-2"></i>
+                            Testing & Certification
+                        </li>
+                    </ul>
+                    <a href="#consultation" class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300">
+                        Discuss Your Project
+                    </a>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fiber Optic Installation" class="rounded-lg w-full">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div class="bg-white p-4 rounded-lg shadow-md order-last md:order-first">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Telecom Projects" class="rounded-lg w-full">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Government & Private Sector Projects</h3>
+                    <p class="text-gray-600 mb-4">Large-scale telecom infrastructure projects for municipalities and enterprises.</p>
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-city text-cyan-400 mr-2"></i>
+                            Municipal Fiber Networks
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-university text-cyan-400 mr-2"></i>
+                            Institutional Installations
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-industry text-cyan-400 mr-2"></i>
+                            Industrial Park Solutions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-hotel text-cyan-400 mr-2"></i>
+                            Hospitality Sector Networks
+                        </li>
+                    </ul>
+                    <div>
+                        <a href="#consultation" class="bg-cyan-400 hover:bg-cyan-500 text-white font-bold py-2 px-6 rounded-lg inline-block transition duration-300 mr-4">
+                            Project Inquiry
+                        </a>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-600 font-medium inline-block">
+                            View Case Studies <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section with RSS Feed -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Latest Tech Insights</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with the latest trends and innovations in IT, electrical, and telecom industries.</p>
+            </div>
+            
+            <!-- Blog Categories -->
+            <div class="flex flex-wrap justify-center mb-8 gap-2">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-full font-medium" data-category="all">All Topics</button>
+                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full font-medium" data-category="it">IT Services</button>
+                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full font-medium" data-category="electrical">Electrical</button>
+                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full font-medium" data-category="telecom">Telecom</button>
+                <button class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full font-medium" data-category="security">Cybersecurity</button>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="max-w-md mx-auto mb-12">
+                <div class="relative">
+                    <input type="text" placeholder="Search blog posts..." class="w-full px-4 py-3 border rounded-lg pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <!-- RSS Feed Blog Posts -->
+            <div class="grid md:grid-cols-3 gap-8" id="rss-feed-container">
+                <!-- Posts will be loaded here by JavaScript -->
+                <div class="text-center py-8">
+                    <i class="fas fa-spinner fa-spin text-4xl text-blue-600 mb-4"></i>
+                    <p>Loading latest tech articles...</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Consultation & Payment Section -->
+    <section id="consultation" class="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Remote IT Support & Consultation</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Get expert technology assistance from anywhere with our secure remote support services.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-green-600">How It Works</h3>
+                        <ol class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Book Your Session</h4>
+                                    <p class="text-gray-600">Select a convenient time from our calendar and provide details about your issue.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Connect Remotely</h4>
+                                    <p class="text-gray-600">We'll contact you via your preferred method (Zoom, TeamViewer, AnyDesk) at the scheduled time.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Resolve Your Issue</h4>
+                                    <p class="text-gray-600">Our certified technicians will diagnose and fix your problem in real-time.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Secure Payment</h4>
+                                    <p class="text-gray-600">Pay conveniently online after your session is completed.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-blue-600">Pricing Options</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="border border-blue-200 rounded-lg p-4">
+                                <h4 class="font-bold text-blue-600 mb-2">Standard Support</h4>
+                                <p class="text-2xl font-bold mb-2">$99<span class="text-sm font-normal text-gray-500">/hour</span></p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        Basic troubleshooting
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        Software configuration
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        Network diagnostics
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="border-2 border-blue-500 rounded-lg p-4 bg-blue-50">
+                                <h4 class="font-bold text-blue-600 mb-2">Premium Support</h4>
+                                <p class="text-2xl font-bold mb-2">$199<span class="text-sm font-normal text-gray-500">/hour</span></p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        Advanced troubleshooting
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        Security audits
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        System optimization
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                        Priority scheduling
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg pulse-animation">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-green-600">Schedule Your Consultation</h3>
+                    <form id="consultation-form" class="space-y-4">
+                        <div>
+                            <label for="consult-name" class="block text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="consult-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label for="consult-email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="consult-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label for="consult-phone" class="block text-gray-700 mb-2">Phone</label>
+                            <input type="tel" id="consult-phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label for="consult-service" class="block text-gray-700 mb-2">Service Needed</label>
+                            <select id="consult-service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select a service</option>
+                                <option value="it-support">IT Support</option>
+                                <option value="network">Network Issues</option>
+                                <option value="security">Security Consultation</option>
+                                <option value="software">Software Help</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="consult-date" class="block text-gray-700 mb-2">Preferred Date</label>
+                            <input type="date" id="consult-date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label for="consult-time" class="block text-gray-700 mb-2">Preferred Time</label>
+                            <select id="consult-time" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select a time slot</option>
+                                <option value="9-11">9:00 AM - 11:00 AM</option>
+                                <option value="11-1">11:00 AM - 1:00 PM</option>
+                                <option value="1-3">1:00 PM - 3:00 PM</option>
+                                <option value="3-5">3:00 PM - 5:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="consult-method" class="block text-gray-700 mb-2">Connection Method</label>
+                            <select id="consult-method" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select preferred method</option>
+                                <option value="zoom">Zoom</option>
+                                <option value="teamviewer">TeamViewer</option>
+                                <option value="anydesk">AnyDesk</option>
+                                <option value="phone">Phone Call</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="consult-issue" class="block text-gray-700 mb-2">Describe Your Issue</label>
+                            <textarea id="consult-issue" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                Schedule Now
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Payment Gateway Integration -->
+            <div class="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto mt-12">
+                <h3 class="text-2xl font-bold mb-6 text-center text-blue-600">Secure Payment Gateway</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold mb-4 text-gray-700">Accepted Payment Methods</h4>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <div class="border rounded-lg p-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png" alt="Mastercard" class="h-8">
+                            </div>
+                            <div class="border rounded-lg p-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa" class="h-8">
+                            </div>
+                            <div class="border rounded-lg p-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Paypal_2014_logo.png/640px-Paypal_2014_logo.png" alt="PayPal" class="h-8">
+                            </div>
+                            <div class="border rounded-lg p-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png" alt="Stripe" class="h-8">
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-gray-700">Payment Security</h4>
+                            <p class="text-sm text-gray-600 mb-4">All transactions are encrypted and processed securely. We never store your payment information.</p>
+                            <div class="flex items-center">
+                                <i class="fas fa-lock text-green-500 text-2xl mr-3"></i>
+                                <span class="text-sm font-medium">256-bit SSL Encryption</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="border-2 border-blue-200 rounded-lg p-6 bg-blue-50">
+                            <h4 class="font-bold mb-4 text-blue-600">Make a Payment</h4>
+                            <form id="payment-form" class="space-y-4">
+                                <div>
+                                    <label for="card-number" class="block text-sm text-gray-700 mb-1">Card Number</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="expiry-date" class="block text-sm text-gray-700 mb-1">Expiry Date</label>
+                                        <input type="text" id="expiry-date" placeholder="MM/YY" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="cvv" class="block text-sm text-gray-700 mb-1">CVV</label>
+                                        <input type="text" id="cvv" placeholder="123" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="amount" class="block text-sm text-gray-700 mb-1">Amount ($)</label>
+                                    <input type="number" id="amount" placeholder="0.00" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="pt-2">
+                                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                        Pay Securely
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to start your project? Contact us today.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold mb-6">Contact Form</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="contact-name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="contact-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="contact-email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="contact-phone" class="block text-gray-700 mb-2">Phone</label>
+                            <input type="tel" id="contact-phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="contact-service" class="block text-gray-700 mb-2">Service Needed</label>
+                            <select id="contact-service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select a service</option>
+                                <option value="it">IT Services</option>
+                                <option value="electrical">Electrical Maintenance</option>
+                                <option value="ftth">FTTH Projects</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="contact-message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+                        <h3 class="text-2xl font-bold mb-6">Our Location</h3>
+                        <div class="h-64 bg-gray-200 rounded-lg overflow-hidden mb-4">
+                            <!-- Google Maps Embed -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256017064!2d-73.98784492416438!3d40.7484409713899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689874901187!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                                <span>123 Tech Street, Innovation City, IC 10001</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-phone text-blue-600 mr-3"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 mr-3"></i>
+                                <span>info@inovectric.com</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-clock text-blue-600 mr-3"></i>
+                                <span>Mon-Fri: 8:00 AM - 6:00 PM</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4">Emergency Support</h3>
+                        <p class="text-gray-600 mb-4">For critical IT or electrical issues outside business hours, our emergency team is available 24/7.</p>
+                        <a href="tel:+15551234567" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Call Emergency Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
+                            <i class="fas fa-bolt text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">Inovectric</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Innovating IT solutions, powering electrical systems, and connecting communities through advanced telecom infrastructure.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#consultation" class="text-gray-400 hover:text-white transition">Consultation</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#it-services" class="text-gray-400 hover:text-white transition">IT Services</a></li>
+                        <li><a href="#electrical" class="text-gray-400 hover:text-white transition">Electrical Maintenance</a></li>
+                        <li><a href="#ftth" class="text-gray-400 hover:text-white transition">FTTH Telecom</a></li>
+                        <li><a href="#consultation" class="text-gray-400 hover:text-white transition">Remote Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and tech insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2023 Inovectric. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Form submission handlers (simulated)
+        document.getElementById('it-quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your request! Our team will contact you shortly with a quote.');
+            this.reset();
+        });
+        
+        document.getElementById('consultation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your consultation has been scheduled! You will receive a confirmation email with connection details.');
+            this.reset();
+        });
+        
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Payment processed successfully! Thank you for your business.');
+            this.reset();
+        });
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Blog category filtering
+        document.querySelectorAll('[data-category]').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('[data-category]').forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'hover:bg-gray-300');
+                });
+                
+                // Add active class to clicked button
+                this.classList.remove('bg-gray-200', 'hover:bg-gray-300');
+                this.classList.add('bg-blue-600', 'text-white');
+                
+                // In a real implementation, you would filter blog posts here
+                console.log('Filtering by category:', this.dataset.category);
+            });
+        });
+
+        // RSS Feed Integration
+        async function loadRSSFeed() {
+            const parser = new RSSParser();
+            const container = document.getElementById('rss-feed-container');
+            
+            try {
+                // Using a tech-focused RSS feed (TechCrunch in this example)
+                const feed = await parser.parseURL('https://techcrunch.com/feed/');
+                
+                // Clear loading indicator
+                container.innerHTML = '';
+                
+                // Display the first 6 articles
+                feed.items.slice(0, 6).forEach(item => {
+                    const pubDate = new Date(item.pubDate);
+                    const formattedDate = pubDate.toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'short', 
+                        day: 'numeric' 
+                    });
+                    
+                    const blogCard = document.createElement('div');
+                    blogCard.className = 'bg-white rounded-lg overflow-hidden shadow-md blog-card';
+                    blogCard.innerHTML = `
+                        <div class="h-48 bg-gray-200 overflow-hidden">
+                            <img src="${item.enclosure ? item.enclosure.url : 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'}" alt="${item.title}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-semibold text-blue-600 uppercase">Tech News</span>
+                                <span class="text-xs text-gray-500">${formattedDate}</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">${item.title}</h3>
+                            <p class="text-gray-600 text-sm mb-4">${item.contentSnippet.substring(0, 150)}...</p>
+                            <a href="${item.link}" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium text-sm">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    `;
+                    
+                    container.appendChild(blogCard);
+                });
+            } catch (error) {
+                console.error('Error loading RSS feed:', error);
+                container.innerHTML = `
+                    <div class="text-center py-8 col-span-3">
+                        <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
+                        <p>Could not load blog articles. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Load RSS feed when page loads
+        document.addEventListener('DOMContentLoaded', loadRSSFeed);
+
+        // Language selector functionality
+        document.querySelectorAll('.language-dropdown a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const langText = this.textContent;
+                const button = document.querySelector('.language-selector button');
+                
+                // Update button text
+                button.innerHTML = `
+                    <i class="fas fa-globe mr-1"></i>
+                    <span>${langText.substring(0, 2)}</span>
+                    <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                `;
+                
+                // In a real implementation, you would change the language here
+                console.log('Changing language to:', langText);
+            });
+        });
+    </script>
+</body>
+</html>
